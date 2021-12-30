@@ -11,7 +11,6 @@ while True:
         resp = str(input('Resposta inválida digite [S/N]? ')).upper().strip()
     if resp == 'N':
         break
-
 maior_peso = menor_peso = 0
 for pessoa in range(0, len(dado)):
     if pessoa == 0:
@@ -21,35 +20,16 @@ for pessoa in range(0, len(dado)):
             maior_peso = dado[pessoa][1]
         if dado[pessoa][1] < menor_peso:
             menor_peso = dado[pessoa][1]
-
+print(dado)
 print(f'Ao todo você cadastrou {len(dado)} pessoas')
 print(f'O maior peso foi de {maior_peso}kg. Peso de', end=' ')
-cont = c = 0
-m_peso = list()
-me_peso = list()
-for name in dado:
-    if maior_peso == name[1]:
-        m_peso.append(name[:])
-        name.clear()
-
-for c, name in enumerate(m_peso):
-    print(f'{name[0]}'.upper(), end='')
-    if c < len(m_peso)-2:
-        print(',', end=' ')
-    if c == len(m_peso)-2:
-        print(' e ')
-    if c == len(me_peso)-1:
-        print('.')
-
+for nome in dado:
+    if nome[1] == maior_peso:
+        print(f' {nome[0]}', end='')
 print(f'\nO menor peso foi de {menor_peso}kg. Peso de', end=' ')
-for c, name in enumerate(dado):
-    print(f'{name[0]}'.upper(), end='')
-    if c < len(me_peso) - 2:
-        print(',', end=' ')
-    if c == len(me_peso) - 2:
-        print(' e ')
-    if c == len(me_peso)-1:
-        print('.')
+for n in dado:
+    if n[1] == menor_peso:
+        print(f' {n[0]}', end='')
 
 
 
