@@ -1,4 +1,5 @@
 par_impar = [[], []]
+lista = list()
 for c in range(1, 10):
     info = (int(input(f'Digite o {c}º valor: ')))
     if info % 2 == 0:
